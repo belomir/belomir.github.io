@@ -1,0 +1,44 @@
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	font-family: sans-serif;
+}
+
+body > * {
+	padding: 1em 2em;
+}
+
+body > header {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	padding: 2em 2em;
+}
+
+main {
+	flex: 1;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+main > a {
+	padding: 1em;
+	margin-bottom: 1em;
+	text-decoration: none;
+}
+
+main > a:hover {
+	text-decoration: underline;
+}
+
+body > footer {
+	color: gray;
+	font-size: small;
+}
+
+.quote {
+	color: gray;
+	font-style: italic;
+}
