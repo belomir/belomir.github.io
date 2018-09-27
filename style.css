@@ -19,6 +19,24 @@ body > header {
 
 main {
 	flex: 1;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: start;
+	justify-content: center;
+}
+
+main > * {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	height: 5em;
+	min-width: 10em;
+	margin: 1em;
+}
+
+main > * > img {
+	margin-bottom: 1em;
 }
 
 body > footer {
