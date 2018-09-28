@@ -85,11 +85,11 @@ body > footer > *:hover {
 	opacity: 1;
 }
 
-body > footer > img {
+body > footer img {
 	height: 32px;
 }
 
-body > footer > img:last-of-type {
+body > footer > :not(p):last-of-type {
 	margin-right: 2em;
 }
 
