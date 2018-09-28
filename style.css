@@ -19,6 +19,7 @@ body > header {
 	flex-flow: column nowrap;
 	align-items: center;
 	padding: 2em 2em;
+	cursor: default;
 }
 
 main {
@@ -44,8 +45,29 @@ main > * > img {
 	margin-bottom: 1em;
 }
 
-main > *:hover, main > * > img:hover + * {
+main > *[href]:hover, main > *[href] > img:hover + * {
 	text-decoration: underline;
+}
+
+main > *:not([href]) {
+	cursor: default;
+	filter: grayscale(25%);
+}
+
+main > *:not([href]):hover {
+	filter: grayscale(90%);
+}
+
+.ce {
+	position: absolute;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	background: black;
+	margin: 0;
+	padding: 0;
+	transition: all 5s;
+	cursor: pointer;
 }
 
 body > footer {
@@ -59,12 +81,12 @@ body > footer > * {
 	opacity: .5;
 }
 
-body > footer > img {
-	height: 32px;
-}
-
 body > footer > *:hover {
 	opacity: 1;
+}
+
+body > footer > img {
+	height: 32px;
 }
 
 body > footer > img:last-of-type {
