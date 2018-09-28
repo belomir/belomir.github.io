@@ -59,6 +59,10 @@ body > footer > * {
 	opacity: .5;
 }
 
+body > footer > img {
+	height: 32px;
+}
+
 body > footer > *:hover {
 	opacity: 1;
 }
