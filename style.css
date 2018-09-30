@@ -28,6 +28,7 @@ main {
 	flex-flow: row wrap;
 	align-items: start;
 	justify-content: center;
+	/*align-items: center;*/
 }
 
 main > * {
@@ -36,12 +37,15 @@ main > * {
 	align-items: center;
 	justify-content: center;
 	height: 5em;
-	min-width: 10em;
+	width: 10em;
+	/*min-width: 10em;
+	max-width: 15em;*/
 	margin: 1em;
 	text-decoration: none;
 }
 
-main > * > img {
+main > * img {
+	height: 100%;
 	margin-bottom: 1em;
 }
 
@@ -72,25 +76,36 @@ main > *:not([href]):hover {
 
 body > footer {
 	font-size: small;
+}
+
+body > footer {
 	display: flex;
 	flex-flow: row wrap;
+	align-items: center;
+}
+
+body > footer > *:not(:last-child) {
+	margin-right: 1em;
+}
+
+.separator {
+	flex: 1;
+}
+
+body > footer img, body > footer p {
+	opacity: .33;
+}
+
+body > footer p {
 	cursor: default;
 }
 
-body > footer > * {
-	opacity: .5;
-}
-
-body > footer > *:hover {
+body > footer img:hover, body > footer > p:hover {
 	opacity: 1;
 }
 
 body > footer img {
-	height: 32px;
-}
-
-body > footer > :not(p):last-of-type {
-	margin-right: 2em;
+	height: 2em;
 }
 
 .quote {
