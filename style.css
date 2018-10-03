@@ -12,7 +12,6 @@ main > * {
 	align-items: center;
 	align-content: center;
 	justify-content: center;
-	height: 5em;
 	min-width: 10em;
 	max-width: 15em;
 	margin: 1em;
@@ -20,10 +19,9 @@ main > * {
 }
 
 main > * img {
-	height: 100%;
-	width: auto;
+	height: 4em;
+	flex: 0;
 	margin-bottom: 1em;
-	max-height: 5em;
 }
 
 main > *[href]:hover, main > *[href] > img:hover + * {
