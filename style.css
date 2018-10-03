@@ -20,7 +20,6 @@ main > * {
 
 main > * img {
 	height: 4em;
-	flex: 0;
 	margin-bottom: 1em;
 }
 
