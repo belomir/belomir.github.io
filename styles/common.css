@@ -1,5 +1,6 @@
 /* © Sergey Roganov aka Belomir, 2018 */
 /* © Сергей Роганов aka Беломир, 2018 */
+
 body {
 	margin: 0;
 	min-height: 100vh;
@@ -35,11 +36,6 @@ body > footer {
 	flex-flow: row nowrap;
 	align-items: center;
 	justify-content: space-between;
-}
-
-.quote {
-	color: gray;
-	font-style: italic;
 }
 
 body::after {

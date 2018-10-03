@@ -1,5 +1,6 @@
-/* © Sergey Roganov aka Belomir, 2018 */
+/* © Sergey Roganov aka belomir, 2018 */
 /* © Сергей Роганов aka Беломир, 2018 */
+
 /* Александр Юрьевич, привет (: */
 
 main {
@@ -23,7 +24,8 @@ main > * img {
 	margin-bottom: 1em;
 }
 
-main > *[href]:hover, main > *[href] > img:hover + * {
+main > *[href]:hover,
+main > *[href] > img:hover + * {
 	text-decoration: underline;
 }
 
@@ -39,44 +41,24 @@ main > *:not([href]):hover {
 body > footer {
 	flex-flow: row wrap;
 	align-items: center;
+	margin-right: 5em;
 }
 
 body > footer > *:not(:last-child) {
 	margin-right: 1em;
 }
 
-body > footer p {
+body > footer address {
+	cursor: default;
 	opacity: .33;
 }
 
 body > footer img {
 	opacity: .125;
-}
-
-body > footer p {
-	cursor: default;
-}
-
-body > footer img:hover, body > footer > p:hover {
-	opacity: 1;
-}
-
-body > footer img {
 	height: 2em;
 }
 
-body > footer {
-	margin-right: 5em;
-}
-
-.ce {
-	position: absolute;
-	overflow: hidden;
-	width: 1px;
-	height: 1px;
-	background: black;
-	margin: 0;
-	padding: 0;
-	transition: all 5s;
-	cursor: pointer;
+body > footer img:hover,
+body > footer > address:hover {
+	opacity: 1;
 }

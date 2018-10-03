@@ -1,5 +1,6 @@
-/* © Sergey Roganov aka Belomir, 2018 */
+/* © Sergey Roganov aka belomir, 2018 */
 /* © Сергей Роганов aka Беломир, 2018 */
+
 (function(){
 	window.addEventListener("load", function(){
 		setTimeout(function(){
@@ -13,10 +14,23 @@
 		var s = window.getComputedStyle(b);
 		var d = document.createElement("div");
 		d.title = '\u0423\u0434\u0438\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E\x2C\x20\u0447\u0442\u043E\x20\u0442\u044B\x20\u044D\u0442\u043E\x20\u0432\u043E\u043E\u0431\u0449\u0435\x20\u043D\u0430\u0448\u0451\u043B\x21';
-		d.classList.add("ce");
+		var style = {
+			position: "absolute",
+			overflow: "hidden",
+			width: "1px",
+			height: "1px",
+			background: "black",
+			margin: "0",
+			padding: "0",
+			transition: "all 5s",
+			cursor: "pointer"
+		};
+		for(var i in style){
+			d.style[i] = style[i];
+		}
+		d.style.opacity = 0;
 		d.style.left = 1+Math.random()*(parseInt(s.width)-2)+"px";
 		d.style.top = 1+Math.random()*(parseInt(s.height)-2)+"px";
-		d.style.opacity = 0;
 		b.appendChild(d);
 		setTimeout(function(){d.style.opacity = 1;}, 1000);
 	}
