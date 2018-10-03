@@ -1,5 +1,5 @@
-/* © Sergey Roganov, 2018 */
-/* © Сергей Роганов, 2018 */
+/* © Sergey Roganov aka Belomir, 2018 */
+/* © Сергей Роганов aka Беломир, 2018 */
 (function(){
 	window.addEventListener("load", function(){
 		setTimeout(function(){
