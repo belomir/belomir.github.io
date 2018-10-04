@@ -1,0 +1,80 @@
+/* © Sergey Roganov aka belomir, 2018 */
+/* © Сергей Роганов aka Беломир, 2018 */
+
+main {
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+.vcard {
+	/*border: 2px solid black;*/
+	padding: 1em;
+	background: white;
+	/*width: 85.6mm;
+	height: 53.98mm;
+	min-height: auto;*/
+}
+
+.qr {
+	/*height: 16em;*/
+	width: 100%;
+	/*margin: 1em;*/
+	display: inline-block;
+}
+
+.vcard > .link {
+	display: inline-block;
+}
+
+a {
+	color: black;
+	fill: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: blue;
+	fill: blue;
+	text-decoration: none;
+}
+
+.row,
+.column {
+	display: flex;
+	justify-content: center;
+	flex: 1;
+}
+
+.separator {
+	padding: 1.5em;
+}
+
+.row {
+	flex-flow: row nowrap;
+}
+
+.column {
+	flex-flow: column nowrap;	
+}
+
+.name {
+	font-size: x-large;
+	font-family: serif;
+}
+
+.position {
+	font-size: small;
+	font-family: sans-serif;
+}
+
+.link {
+	font-size: large;
+	font-family: monospace;
+}
+
+.icon {
+	display: inline;
+	height: 1em;
+	width: 1em;
+	vertical-align: text-bottom;
+}
