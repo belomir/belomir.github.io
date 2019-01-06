@@ -1,12 +1,12 @@
 <!doctype html>
-<!-- (C) Roganov Sergey aka belomir, 2018 -->
+<!-- (C) Roganov Sergey aka belomir, 2019 -->
 <!-- https://barcode.tec-it.com/ru/EAN13?data= -->
 <!-- https://barcode.tec-it.com/barcode.ashx?code=EAN13&imagetype=Svg&data= -->
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1">
-	<title>Декабрь</title>
+	<title>Январь</title>
 	<style>
 	body {
 		margin: 0;
@@ -17,7 +17,6 @@
 	body>* {
 		padding-top: 8px;
 		width: 100%;
-		/*flex: 1;*/
 		border-top: 1px solid black;
 		position: relative;
 		display: flex;
@@ -29,7 +28,6 @@
 	}
 	img {
 		width: 100%;
- 		/*transform: rotate(180deg);*/
 	}
 	img+div {
 		color: red;
@@ -43,18 +41,14 @@
 		document.querySelectorAll('body>*').forEach((e,i,a)=>{
 			e.setAttribute('id', i);
 			e.setAttribute('href', `#${(i+1)%a.length}`);
-			/*e.addEventListener('click', e=>{
-				
-			});*/
 		});
 	});
 </script>
 </head>
 <body>
 	<a>
-		<img src="13_dec.svg">
+		<img src='https://barcode.tec-it.com/barcode.ashx?code=EAN13&imagetype=Svg&data=2140003603162'/>
 		<div>13</div>
 	</a>
-	<a><img src='https://barcode.tec-it.com/barcode.ashx?code=EAN13&imagetype=Svg&data=2140003512242'/></a>
 </body>
 </html>
