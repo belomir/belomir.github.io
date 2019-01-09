@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>jquery load</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script>
+		$(()=>{
+			$('div:eq(1)').load('templatediv.html');
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<h1>
+			jquery load
+		</h1>
+	</header>
+	<main>
+		<div>first div is simpple</div>
+		<div>second is loaded</div>
+	</main>
+	<footer>
+		<p>
+			&copy; RSA aka belomir, 2019
+		</p>
+	</footer>
+</body>
+</html>
