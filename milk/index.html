@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1">
-	<title>Январь</title>
+	<title>Молочка</title>
 	<style>
 	body {
 		margin: 0;
@@ -37,7 +37,18 @@
 	}
 </style>
 <script>
-	document.addEventListener('DOMContentLoaded', ev=>{
+	document.addEventListener('DOMContentLoaded', evt=>{
+		var file = new XMLHttpRequest();
+		file.open('GET', './codes', true);
+		file.addEventListener('readystatechange', ev=>{
+			if(file.readyState === 4){
+				if(file.status === 200){
+					text = file.responseText;
+					lines = file.responseText.split('\n');
+					console.log(lines);
+				}
+			}
+		});
 		document.querySelectorAll('body>*').forEach((e,i,a)=>{
 			e.setAttribute('id', i);
 			e.setAttribute('href', `#${(i+1)%a.length}`);
