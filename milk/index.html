@@ -39,6 +39,7 @@
 <script>
 	document.addEventListener('DOMContentLoaded', evt=>{
 		var prefix = 'https://barcode.tec-it.com/barcode.ashx?code=EAN13&imagetype=Svg&data=';
+		var M = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 		var body = document.querySelector('body');
 		var file = new XMLHttpRequest();
 		file.addEventListener('load', ev=>{
@@ -51,6 +52,7 @@
 				var m = parseInt(d[0]);
 				var y = parseInt(d[1]);
 				if(((D.getFullYear())==(2000+y))&&((D.getMonth()+1)==m)){
+					document.title = M[m-1];
 					var ar = arr[1].split(',');
 					ar.forEach((e,i,a)=>{
 						var el = e.split(' ');
