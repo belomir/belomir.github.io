@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1">
-	<title>Январь</title>
+	<title>Молочка</title>
 	<style>
 	body {
 		margin: 0;
@@ -37,22 +37,44 @@
 	}
 </style>
 <script>
-	document.addEventListener('DOMContentLoaded', ev=>{
-		document.querySelectorAll('body>*').forEach((e,i,a)=>{
-			e.setAttribute('id', i);
-			e.setAttribute('href', `#${(i+1)%a.length}`);
+	document.addEventListener('DOMContentLoaded', evt=>{
+		var prefix = 'https://barcode.tec-it.com/barcode.ashx?code=EAN13&imagetype=Svg&data=';
+		var body = document.querySelector('body');
+		var file = new XMLHttpRequest();
+		file.addEventListener('load', ev=>{
+			var text = file.responseText;
+			var lines = text.split('\n').filter(x=>x!='');
+			lines.forEach((e,i,a)=>{
+				var arr = e.split(';');
+				var D = new Date();
+				var d = arr[0].split('.');
+				var m = parseInt(d[0]);
+				var y = parseInt(d[1]);
+				if(((D.getFullYear())==(2000+y))&&((D.getMonth()+1)==m)){
+					var ar = arr[1].split(',');
+					ar.forEach((e,i,a)=>{
+						var el = e.split(' ');
+						var n = el[0];
+						var c = el[1];
+						var h = document.createElement('a');
+						h.setAttribute('id', i);
+						h.setAttribute('href', `#${(i+1)%a.length}`);
+							var img = document.createElement('img');
+							img.setAttribute('src', `${prefix}${c}`);
+							h.appendChild(img);
+							var div = document.createElement('div');
+							div.textContent = n;
+							h.appendChild(div);
+						body.appendChild(h);
+					});
+				}
+			});
 		});
+		file.open('GET', 'https://roganof.ru/milk/codes', true);
+		file.send();
 	});
 </script>
 </head>
 <body>
-	<a>
-		<img src='https://barcode.tec-it.com/barcode.ashx?code=EAN13&imagetype=Svg&data=2140003603162'/>
-		<div>13</div>
-	</a>
-	<a>
-		<img src='https://barcode.tec-it.com/barcode.ashx?code=EAN13&imagetype=Svg&data=2140003607528'/>
-		<div>93</div>
-	</a>
 </body>
 </html>
