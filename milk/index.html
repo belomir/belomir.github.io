@@ -57,7 +57,7 @@
 		}
 		function goto(ev){
 			if(!longpressed){
-				window.open(`${window.location.hostname}${window.location.pathname}#${(parseInt(ev.currentTarget.id)+1)%N}`, '_self');
+				window.open(`${window.location.hostname||window.location.pathname}#${(parseInt(ev.currentTarget.id)+1)%N}`, '_self');
 			}
 		}
 		function longpress(ev){
