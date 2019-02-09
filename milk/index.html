@@ -43,8 +43,10 @@
 		var prefix0 = 'https://barcode.tec-it.com/barcode.ashx?code=EAN13&imagetype=Svg&data=';
 		var prefix1 = 'https://photos.app.goo.gl/';
 		var M = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+		var N = 0;
 		var photoCode = null;
 		var timeout = null;
+		var longpressed = false;
 		function start(ev){
 			if(ev.type != 'click'){
 				timeout = setTimeout(longpress, 2000);
@@ -53,8 +55,14 @@
 		function stop(ev){
 			clearTimeout(timeout);
 		}
+		function goto(ev){
+			if(!longpressed){
+				window.open(`${window.location.hostname}${window.location.pathname}#${(parseInt(ev.currentTarget.id)+1)%N}`, '_self');
+			}
+		}
 		function longpress(ev){
 			clearTimeout(timeout);
+			longpressed = true;
 			window.open(`${prefix1}${photoCode}`, '_self');
 		}
 		var body = document.querySelector('body');
@@ -71,6 +79,7 @@
 				if(((D.getFullYear())==(2000+y))&&((D.getMonth()+1)==m)){
 					setTimeout(ev=>{document.title = M[m-1];}, 5000);
 					var ar = arr[1].split(',');
+					N = ar.length;
 					if(arr.length>2){
 						photoCode = arr[2];
 						body.addEventListener('mousedown', start);
@@ -86,9 +95,10 @@
 						var el = e.split(' ');
 						var n = el[0];
 						var c = el[1];
-						var h = document.createElement('a');
+						var h = document.createElement('div');
 						h.setAttribute('id', i);
-						h.setAttribute('href', `#${(i+1)%a.length}`);
+						// h.setAttribute('href', `#${(i+1)%a.length}`);
+						h.addEventListener('click', goto);
 							var img = document.createElement('img');
 							img.setAttribute('src', `${prefix0}${c}`);
 							h.appendChild(img);
