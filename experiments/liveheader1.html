@@ -8,51 +8,28 @@
 	<link rel=stylesheet type=text/css href=style.css>
 </head>
 <body>
-	<svg class=symbols>
-		<symbol id=wave width=100% height=100% viewBox='0 0 100 10' preserveAspectRatio=none>
-			<style>
-				path {
-					transform-origin: bottom;
-					animation-direction: alternate;
-					animation-timing-function: ease-in-out;
-					animation-iteration-count: infinite;
-					animation-play-state: running;
-					animation-name: yscale;
-					opacity: .25;
-					transform: scaleY(0);
-				}
-
-				@keyframes yscale {
-					from {transform: scaleY(0);}
-					to {transform: scaleY(1);}
-				}
-			</style>
-			<path d='M0,5 q25,10 50,0 t50,0 V10 H0 z' />
-			<path d='M0,5 q25,-10 50,0 t50,0 V10 H0 z' />
-			<path d='M0,5 q16.5,10 33,0 t33,0 t34,0 V10 H0 z' />
-			<path d='M0,5 q16.5,-10 33,0 t33,0 t34,0 V10 H0 z' />
-			<path d='M0,5 q12.5,10 25,0 t25,0 t25,0 t25,0 V10 H0 z' />
-			<path d='M0,5 q12.5,-10 25,0 t25,0 t25,0 t25,0 V10 H0 z' />
-			<path d='M0,5 q8.25,10 16.6,0 t16.6,0 t16.6,0 t16.6,0 t16.6,0 t17,0 V10 H0 z' />
-			<path d='M0,5 q8.25,-10 16.5,0 t16.5,0 t16.5,0 t16.5,0 t16.5,0 T100,5 V10 H0 z' />
-			<path d='M0,5 q6.25,10 12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 V10 H0 z' />
-			<path d='M0,5 q6.25,-10 12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 V10 H0 z' />
-			<script>
-				document.querySelectorAll('symbol path').forEach((e,i,a)=>{
-					e.style.animationDelay = `${Math.floor(-10+5*Math.random())}s`;
-					e.style.animationDuration = `${Math.floor(5+15*Math.random())}s`;
-				});
-			</script>
-		</symbol>
-	</svg>
 	<header>
 		<h1>
 			Header
 		</h1>
+		<svg class=waves viewBox='0 0 100 10' preserveAspectRatio=none>
+			<g class=wave>
+				<path d='M0,5 q25,10 50,0 t50,0 V10 H0 z' />
+				<path d='M0,5 q25,-10 50,0 t50,0 V10 H0 z' />
+				<path d='M0,5 q16.5,10 33,0 t33,0 t34,0 V10 H0 z' />
+				<path d='M0,5 q16.5,-10 33,0 t33,0 t34,0 V10 H0 z' />
+				<path d='M0,5 q12.5,10 25,0 t25,0 t25,0 t25,0 V10 H0 z' />
+				<path d='M0,5 q12.5,-10 25,0 t25,0 t25,0 t25,0 V10 H0 z' />
+				<path d='M0,5 q8.25,10 16.6,0 t16.6,0 t16.6,0 t16.6,0 t16.6,0 t17,0 V10 H0 z' />
+				<path d='M0,5 q8.25,-10 16.5,0 t16.5,0 t16.5,0 t16.5,0 t16.5,0 T100,5 V10 H0 z' />
+				<path d='M0,5 q6.25,10 12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 V10 H0 z' />
+				<!-- <path d='M0,5 q6.25,-10 12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 t12.5,0 V10 H0 z' /> -->
+			</g>
+		</svg>
 	</header>
-	<svg class=waves>
-		<use class=wave xlink:href=#wave />
-	</svg>
+	<!-- <svg class=waves>
+		<use class=wave1 xlink:href=#wave />
+	</svg> -->
 	<main>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -87,5 +64,11 @@
 			&copy; RSA, 2019
 		</p>
 	</footer>
+	<script>
+		document.querySelectorAll('path').forEach((e,i,a)=>{
+			e.style.animationDelay = `${Math.floor(-10+5*Math.random())}s`;
+			e.style.animationDuration = `${Math.floor(5+15*Math.random())}s`;
+		});
+	</script>
 </body>
 </html>
