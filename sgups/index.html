@@ -1,1 +1,42 @@
-
+<!DOCTYPE html>
+<!-- © RSA, 2019, Nsk -->
+<html lang='ru'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel='stylesheet' type='text/css' href='css/style.css'>
+	<title>расписание кафедры &laquo;Общая информатика&raquo;</title>
+</head>
+<body>
+	<header>
+		<div id='login'>
+			<label>
+				зайти как:
+				<select>
+					<option selected=true value=-1>студент</option>
+				</select>
+			</label>
+		</div>
+		<h1>расписание кафедры &laquo;Общая информатика&raquo;</h1>
+	</header>
+	<nav>
+		<div id='date'>
+			<button>&lt;</button>
+			<button>
+				<label id='week' for='chooseDate'>неделя</label>
+				<input id='chooseDate' type='date'/>
+			</button>
+			<button>&gt;</button>
+		</div>
+	</nav>
+	<main>
+		<div id='grand' visible='true'></div>
+		<div id='teacher' visible='false'></div>
+		<div id='group' visible='false'></div>
+		<div id='room' visible='false'></div>
+	</main>
+	<footer>
+		<p>&copy; RSA, 2019, Nsk</p>
+	</footer>
+</body>
+</html>
