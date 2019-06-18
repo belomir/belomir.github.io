@@ -3,12 +3,12 @@
 <!-- https://barcode.tec-it.com/ru/EAN13?data=*** -->
 <!-- https://barcode.tec-it.com/barcode.ashx?code=EAN13&imagetype=Svg&data=*** -->
 <!-- https://photos.app.goo.gl/*** -->
-<html lang="ru">
+<html lang='ru'>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width; initial-scale=1">
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width; initial-scale=1'>
 	<title>Молочка</title>
-	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel='icon' type='image/png' href='favicon.png'>
 	<style>
 	body {
 		margin: 0;
@@ -54,7 +54,7 @@
 	}
 </style>
 <script>
-	document.addEventListener('DOMContentLoaded', evt=>{
+	function milk(){
 		var prefix0 = 'https://barcode.tec-it.com/barcode.ashx?code=EAN13&imagetype=Svg&data=';
 		var prefix1 = 'https://photos.app.goo.gl/';
 		var M = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
@@ -74,7 +74,6 @@
 			clearTimeout(timeout);
 			if(!longpressed){
 				window.location.hash = ((parseInt(window.location.hash.replace('#', ''))||0)+1)%N;
-				// window.open(`${window.location.protocol}//${window.location.hostname}${window.location.pathname}#${(parseInt(ev.currentTarget.id)+1)%N}`, '_self');
 			}
 		}
 		function longpress(ev){
@@ -83,9 +82,7 @@
 			window.open(`${prefix1}${photoCode}`, '_self');
 		}
 		var body = document.querySelector('body');
-		var file = new XMLHttpRequest();
-		file.addEventListener('load', evt=>{
-			var text = file.responseText;
+		fetch('codes').then(r=>r.text()).then(text=>{
 			var lines = text.split('\n').filter(x=>x!='');
 			lines.forEach((e,i,a)=>{
 				var arr = e.split(';');
@@ -103,8 +100,6 @@
 						var c = el[1];
 						var h = document.createElement('div');
 						h.setAttribute('id', i);
-						// h.setAttribute('href', `#${(i+1)%a.length}`);
-						// h.addEventListener('click', goto);
 							var img = document.createElement('img');
 							img.setAttribute('src', `${prefix0}${c}`);
 							h.appendChild(img);
@@ -130,9 +125,9 @@
 				}
 			});
 		});
-		file.open('GET', 'codes', true);
-		file.send();
-	});
+	}
+	if(document.body)milk();
+	else document.addEventListener('DOMContentLoaded', milk);
 </script>
 </head>
 <body>
